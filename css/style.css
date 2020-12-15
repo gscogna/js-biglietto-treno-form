@@ -84,3 +84,14 @@ select:focus {
     box-shadow: 2px 2px 6px rgba(0 , 0 , 0, 0.5);
     padding:20px;
 }
+
+.formattazione{
+    text-transform: uppercase;
+    text-align: left;
+}
+
+#passeggero-name{
+    text-transform: uppercase
+
+
+}
