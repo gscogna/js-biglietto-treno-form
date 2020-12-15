@@ -19,7 +19,7 @@ h1{
 
 .form-dati{
     background-color: white;
-    max-width: 1300px;
+    max-width: 700px;
     margin:auto;
     border-radius: 5px;
     box-shadow: 2px 2px 6px rgba(0 , 0 , 0, 0.5);
@@ -37,13 +37,19 @@ h1{
     padding: 20px 30px;
 }
 
+.col label{
+    color:#B91450;
+    font-weight: bolder;
+    margin:20px 0;
+}
+
 .btn{
     background-color: lightgrey;
     color:#B91450;
     border-radius:5px;
     border:1px solid grey;
-    padding:5px;
-    margin:0px 15px;
+    padding:10px;
+    margin:5px 15px;
 
 }
 
@@ -66,5 +72,15 @@ input , select{
 input:focus ,
 select:focus {
     background-color: #B91450;
-    color: white;
+    color: black;
+}
+
+/* seconda parte Biglietto */
+
+#biglietto{
+    background-color: white;
+    max-width: 700px;
+    margin:auto;
+    box-shadow: 2px 2px 6px rgba(0 , 0 , 0, 0.5);
+    padding:20px;
 }
