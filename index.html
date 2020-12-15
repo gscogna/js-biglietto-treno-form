@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Biglietto treno</title>
+</head>
+<body>
+
+<div class="wrapper">
+    <h1>Calcola il prezzo del tuo biglietto</h1>
+    <div class="form-dati">
+        <!-- prima riga -->
+        <div class="row">
+            <div class="col">
+                <label for="nome">Nome e Cognome</label>
+                <input id="nome" type="text" placeholder="Inserisci il tuo nome">
+            </div>
+            <div class="col">
+                <label for="kilometri">Km da percorrere</label>
+                <input id="kilometri" type="number" placeholder="Inserisci i Km">
+            </div>
+            <div class="col">
+                <label for="eta">Fascia d'età</label>
+                <select name="" id="eta">
+                    <option value="minorenne">Minorenne</option>
+                    <option value="magiorenne">Magiorenne</option>
+                    <option value="over65">Over65</option>
+                </select>
+            </div>
+        </div>
+        <!-- seconda riga -->
+        <div class="row">
+            <div class="btn"><a href="#">Genera</a></div>
+            <div class="btn"><a href="#">Annulla</a></div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="js/script.js" charset="utf-8"></script>
+</body>
+</html>
