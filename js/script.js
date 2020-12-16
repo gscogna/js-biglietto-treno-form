@@ -1,62 +1,56 @@
-// Creiamo un finto biglietto del treno con:
-// Nome passeggero
-// Codice treno (numero casuale tra 90000 e 100000 escluso)
-// Numero carrozza
-// Prezzo calcolato
-// Categoria selezionata dall'utente
-// Aggiungiamo una piccola animazione al click su "Crea" e "Annulla", se clicchiamo su annulla dobbiamo ripulire il form.
-var element = document.getElementById("genera");
-
-element.addEventListener('click',
+// generatore di classe
+var crea = document.getElementById("genera");
+// stesso id METTO tutto dentro
+genera .addEventListener('click',
 function() {
 
-
-    var nome = document.getElementById('nome').value;
-    var km = document.getElementById('kilometri').value;
-    var eta = document.getElementById('eta').value;
-
-    var costoBiglietto = km * 0.21;
-    var tariffa = 'tariffa standard';
+  // utilizzo value al posto innerhtml
+  // tra parentesi ID elemento
+  var nome = document.getElementById('nome').value;
+  var distanza = document.getElementById('km').value;
+  var eta = document.getElementById('eta').value;
 
 
-    if (eta == 'minorenne'){
+  // facendo direttamente l operazione sotto if evitiamo di dare variabili a 2 costobiglietto
+  var prezzo = distanza * 0.21;
+  var messaggio = 'Tariffa Standard';
 
-        costoBiglietto =  costoBiglietto - km * 20/100;
-        tariffa = 'sconto minorenne';
+  if (eta == "minore"){
+    prezzo -= prezzo * 0.2;
+    messaggio = 'Sconto minorenne';
+    // se sono solo due va bene else if
+  } else if( eta == "over"){
+    prezzo -= prezzo * 0.4;
+    messaggio = 'Sconto Silver';
+  }
 
-    }else if (eta == 'over' ){
+  //prendo da ID
+  document.getElementById('nome-passeggero').innerHTML = nome;
+  document.getElementById('offerta').innerHTML = messaggio;
+  // generatore da 1 a 10
+  document.getElementById('carrozza').innerHTML = Math.floor((Math.random()*9) +1);
+  // generatore da 1 a 1000
+  document.getElementById('codiceCp').innerHTML = Math.floor(Math.random() * (100000 - 90000)) + 90000;
+  // costo fino a centesimi di euro
+  document.getElementById('costo').innerHTML = prezzo.toFixed(2) + " €";
+  //prendo classe show dall html css e lo do a biglietto
+  document.getElementById('biglietto').className = 'show' ;
+});
 
-        costoBiglietto =  costoBiglietto - km * 40/100;
-        tariffa = 'sconto silver';
+// basta aggiungere apici vuoti e sovrascrivo
+var cancella = document.getElementById("annulla");
 
-    }
-
-    // inserire dati input
-    document.getElementById('passeggero-name').innerHTML = nome;
-
-    document.getElementById('tipo-offerta').innerHTML = tariffa;
-
-    document.getElementById('carrozza').innerHTML =
-    Math.floor(Math.random( ) * 9) + 1;
-
-    document.getElementById('codice-cp').innerHTML =
-    function getRandomInt(min, max) {
-      min = Math.ceil(9000);
-      max = Math.floor(9900);
-      return Math.floor(Math.random( ) * (9900 - 9000)) + 9001;
-    }
-
-    document.getElementById('costo').innerHTML =
-    costoBiglietto.tofixed(2) + ' €';
-
-}
-);
-
-
-
-var element = document.getElementById("annulla");
-element.addEventListener('click',
+cancella.addEventListener('click',
 function() {
+  document.getElementById('nome-passeggero').innerHTML = '';
+  document.getElementById('offerta').innerHTML = '' ;
+  document.getElementById('carrozza').innerHTML = '' ;
+  document.getElementById('codiceCp').innerHTML = '' ;
+  document.getElementById('costo').innerHTML = '' ;
+  document.getElementById('nome').value = '' ;
+  document.getElementById('km').value = '' ;
+  document.getElementById('eta').value = '' ;
 
-}
-);
+  //prendo classe hidden dall html css e lo do a biglietto
+  document.getElementById('biglietto').className = 'hidden';
+});
