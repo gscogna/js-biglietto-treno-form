@@ -17,6 +17,10 @@ h1{
     padding:20px 0;
 }
 
+.wrapper{
+  margin-top:200px;
+}
+
 .form-dati{
     background-color: white;
     max-width: 800px;
@@ -68,7 +72,7 @@ input , select{
 
 input:focus ,
 select:focus {
-    background-color: #B91450;
+    background-color: lightgrey;
     color: black;
 }
 
